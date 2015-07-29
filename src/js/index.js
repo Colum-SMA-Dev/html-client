@@ -3,11 +3,21 @@
 
 var io = require('socket.io-client');
 var queryString = require('query-string');
+var HtmlPlayer = require('./html-player');
 
 var params = queryString.parse(location.search);
 
 var socket = io(params.controller, {
     forceNew: true
+});
+
+var player = new HtmlPlayer(document.querySelector('#main'));
+
+player.on('mediaTransitioning', function(mediaObject) {
+    socket.emit('mediaTransitioning', mediaObject.getId());
+});
+player.on('mediaDone', function(mediaObject) {
+    socket.emit('mediaDone', mediaObject.getId());
 });
 
 function handleError (err) {
@@ -19,17 +29,9 @@ function handleError (err) {
 socket.on('connect', function() {
     console.log('socket connected');
 
-    socket.on('showMedia', function(data) {
-        console.log(data);
-    });
+    socket.on('showMedia', player.show.bind(player));
 
-    socket.emit('loadScene', params.sceneId, function(err, scene) {
-        handleError(err);
-        if (! scene) {
-            handleError('invalid sceneId passed in url parameters');
-        }
-        socket.emit('playScene', scene._id);
-    });
+    socket.emit('playScene', params.sceneId);
 });
 
 socket.on('connect_error', handleError);

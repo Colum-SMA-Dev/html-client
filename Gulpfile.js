@@ -40,7 +40,7 @@ if (production) {
   abstract out the process of making a bundler, and then leave it open to manual triggering
 */
 
-var htmlClientBundler = bundlerBuilder('./src/js/html-client.js', 'html-client.js');
+var htmlClientBundler = bundlerBuilder('./src/js/index.js', 'index.js');
 
 function bundlerBuilder (startPath, finishName, useReactify) {
     var bundler = watchify(browserify(startPath, objectAssign({debug: true}, watchify.args)));

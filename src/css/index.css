@@ -19,7 +19,7 @@ html, body {
     right: 0;
     left: 0;
     display: none;
-}
+} 
 
 #connection.show {
     display: -webkit-box;

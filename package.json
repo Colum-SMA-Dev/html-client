@@ -41,7 +41,7 @@
     "object-assign": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.3.0"
+    "watchify": "^3.3.0",
     "audio5": "^0.1.10",
     "connect": "^3.4.0",
     "connect-livereload": "^0.5.3",

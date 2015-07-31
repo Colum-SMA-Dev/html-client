@@ -1,5 +1,6 @@
 html, body, #main {
     height: 100%;
+    overflow: hidden;
 }
 
 html, body {
@@ -9,4 +10,33 @@ html, body {
 
 #main {
     background-color: #000;
+}
+
+#connection {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+}
+
+#connection.show {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+#connection form {
+    margin: auto;
+}
+
+#connection label {
+    display: block;
+    color: #bbb;
+}
+
+#connection input {
+    margin-bottom: 16px;
 }

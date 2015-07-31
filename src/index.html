@@ -9,6 +9,18 @@
 
     <body>
         <div id="main"></div>
+        <div id='connection'>
+            <form id='connectionForm' method='GET' action=''>
+            
+                <label>Controller Url:</label>
+                <input name='controller' required type='url' />
+
+                <label for='sceneId'>Scene ID:</label>
+                <input name='sceneId' required type='text' />
+
+                <input type='submit' />
+            </form>
+        </div>
         <script src="//cdn.polyfill.io/v1/polyfill.js?features=<%= polyfillFeatures %>"></script>
         <script src='js/index.js'></script>
     </body>

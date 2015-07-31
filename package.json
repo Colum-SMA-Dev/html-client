@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/Colum-SMA-Dev/media-frameworks-html-client",
   "devDependencies": {
+    
+  },
+  "dependencies": {
     "browserify": "^11.0.0",
     "chai": "^3.2.0",
     "chance": "^0.7.6",
@@ -39,8 +42,6 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.3.0"
-  },
-  "dependencies": {
     "audio5": "^0.1.10",
     "connect": "^3.4.0",
     "connect-livereload": "^0.5.3",
